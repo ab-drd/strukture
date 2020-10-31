@@ -144,7 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
+    <ClCompile Include="main23.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="s2.txt" />
