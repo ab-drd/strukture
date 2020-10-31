@@ -1,3 +1,4 @@
-﻿  main.c
-c:\users\antonia\source\repos\hello world\hello world\main.c(60): warning C4101: 'aps': unreferenced local variable
-  Hello World.vcxproj -> C:\Users\Antonia\source\repos\Hello World\Debug\Hello World.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Hello World.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main23.c
+c:\users\antonia\source\repos\helloworld\hello world\main23.c(292): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 4 has type 'Pozicija'
+  Hello World.vcxproj -> C:\Users\Antonia\source\repos\HelloWorld\Debug\Hello-world.exe
