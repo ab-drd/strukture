@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main4.c">
+    <ClCompile Include="main5.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="polynomial.txt">
+    <Text Include="lists5.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
