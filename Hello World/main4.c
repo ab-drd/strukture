@@ -205,8 +205,6 @@ int File_Number_Lines(char* filename)
 
 	fclose(file);
 	return count;
-
-	return count;
 }
 
 void Insert_Sort(Position Head, Position P)
