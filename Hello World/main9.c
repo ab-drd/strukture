@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 struct treeNode;
@@ -10,6 +11,8 @@ struct treeNode
 	Tree left;
 	Tree right;
 };
+
+int ValidIntInputAndCheck(int, int);
 
 Tree ClearTree(Tree);
 Tree Add(int, Tree);
@@ -27,23 +30,81 @@ int main()
 	root.left = NULL;
 	root.right = NULL;
 
+	int rootValue = 0;
+	printf("Set root value of BST:\n");
+	scanf("%d", &rootValue);
+
+	root.element = rootValue;
+	system("cls");
 	while(!shouldIStop)
 	{
-		printf("Opcije");
-	
+		printf("Actions:\n<1>   Add desired element\n<2>   Print BST\n<3>   Find element of chosen value\n<4>   Delete desired element\n<0>   Exit\n");
+		int actionChoice = ValidIntInputAndCheck(0, 4);
+
+		switch(actionChoice)
+		{
+			case 1:
+				printf("\nInput the number you want to add to your BST:\n");
+
+				int inputInteger = 0;
+				scanf("%d", &inputInteger);
+
+				Add(inputInteger, &root);
+				break;
+
+			case 2:
+				puts("");
+				Print(&root);
+				puts("");
+				break;
+
+			case 3:
+				printf("\nInput the number you want to find in your BST:\n");
+
+				int findInteger = 0;
+				scanf("%d", &findInteger);
+
+				printf("\nNumber is on (%d)", FindValue(findInteger, &root));
+
+				break;
+
+			case 4:
+				printf("\nInput the number you want to delete from your BST:\n");
+
+				int deleteInteger = 0;
+				scanf("%d", &deleteInteger);
+
+				Delete(deleteInteger, &root);
+				break;
+
+			case 0:
+				shouldIStop = 1;
+				break;
+
+			default:
+				printf("\nInvalid input\n");
+				break;
+		}
+
+		printf("Press any key to continue...");
+		getch();
+		system("cls");
 	}
 
-	Add(3, &root);
-	Add(2, &root);
-	Add(7, &root);
-	Add(1, &root);
-	Add(8, &root);
-
-	printf("BST Minimum: %d\n", FindMinimum(&root)->element);
-
-	Print(&root);
-
 	return 0;
+}
+
+int ValidIntInputAndCheck(int range1, int range2)
+{
+	int someInteger = 0;
+	scanf("%d", &someInteger);
+
+	while (someInteger < range1 || someInteger > range2) {
+		printf("\nNumber is out of range %d - %d\nRepeat input:\n", range1, range2);
+		scanf("%d", &someInteger);
+	}
+
+	return someInteger;
 }
 
 Tree ClearTree(Tree currentNode) 
@@ -70,6 +131,8 @@ Tree Add(int value, Tree currentNode)
 		currentNode->element = value;
 		currentNode->left = NULL;
 		currentNode->right = NULL;
+
+		printf("Value %d has been added\n", value);
 	}
 	else if (value < currentNode->element)
 	{
@@ -97,22 +160,24 @@ Tree Delete(int value, Tree currentNode)
 
 	if(value < currentNode->element) 
 	{
-		currentNode->left = Delete(value, currentNode);
+		currentNode->left = Delete(value, currentNode->left);
 	}
 	else if(value > currentNode->element) 
 	{
-		currentNode->right = Delete(value, currentNode);
+		currentNode->right = Delete(value, currentNode->right);
 	}
 	else 
 	{
 		if(currentNode->left == NULL) 
 		{
 			Tree returnNode = currentNode->right;
+			free(currentNode);
 			return returnNode;
 		}
 		else if(currentNode->right == NULL)
 		{
 			Tree returnNode = currentNode->left;
+			free(currentNode);
 			return returnNode;
 		}
 
@@ -120,7 +185,7 @@ Tree Delete(int value, Tree currentNode)
 
 		currentNode->element = temporaryNode->element;
 
-		currentNode->right = Delete(temporaryNode->element, currentNode->right);
+		currentNode->right = Delete(currentNode->element, currentNode->right);
 	}
 
 	return currentNode;
@@ -169,7 +234,7 @@ void Print(Tree currentNode)
 	if(currentNode != NULL)
 	{
 		Print(currentNode->left);
-		printf(" %d", currentNode->element);
+		printf("%d ", currentNode->element);
 		Print(currentNode->right);
 	}
 }
