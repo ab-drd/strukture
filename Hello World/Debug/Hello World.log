@@ -1,28 +1,19 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Hello World.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main8.c
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(69): warning C4133: 'function': incompatible types - from 'Position' to 'StackPosition'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(69): warning C4133: 'function': incompatible types - from 'Stack *' to 'Position'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(82): warning C4020: 'MoveCurrent': too many actual parameters
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(145): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(149): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(149): warning C4024: 'MakePosition': different types for formal and actual parameter 1
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(153): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(153): warning C4024: 'MakePosition': different types for formal and actual parameter 1
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(155): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(155): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(160): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(160): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(171): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(171): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(186): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(216): warning C4028: formal parameter 1 different from declaration
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(216): warning C4028: formal parameter 2 different from declaration
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(247): warning C4029: declared formal parameter list different from definition
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(258): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(266): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(266): warning C4024: 'strcmp': different types for formal and actual parameter 2
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(270): warning C4133: 'function': incompatible types - from 'Position' to 'StackPosition'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(270): warning C4133: 'function': incompatible types - from 'StackPosition' to 'Position'
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(316): warning C4028: formal parameter 1 different from declaration
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(316): warning C4028: formal parameter 2 different from declaration
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(113): warning C4013: 'getch' undefined; assuming extern returning int
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(138): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(142): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(142): warning C4024: 'MakePosition': different types for formal and actual parameter 1
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(146): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(146): warning C4024: 'MakePosition': different types for formal and actual parameter 1
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(148): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(148): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(153): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(153): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(164): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(164): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(179): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(242): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(250): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main8.c(250): warning C4024: 'strcmp': different types for formal and actual parameter 2
   Hello World.vcxproj -> C:\Users\Antonia\Documents\Strukture Podataka Zadaci\strukture\Debug\Hello-world.exe

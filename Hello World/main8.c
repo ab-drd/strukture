@@ -33,22 +33,20 @@ struct stack
 	StackPosition next;
 };
 
-
-
 void Remove(Position);
 void CreateChild(Position);
 void InsertAfter(Position, Position);
 void PrintDirectory(Position);
-void PrintCurrentPath(StackPosition, Position);
+void PrintCurrentPath(Position, StackPosition);
+void PrintReverse(StackPosition);
 
-Position MoveCurrent(Position);
-Position CurrentToParent(StackPosition);
+Position MoveCurrent(Position, StackPosition);
 Position MakePosition(char*);
+Position CurrentToParent(Position, StackPosition);
 
 StackPosition CreateStackElement(Position);
-int PushStack(StackPosition, Position);
+int PushStack(Position, StackPosition);
 Position PopStack(StackPosition);
-
 
 int main()
 {
@@ -73,7 +71,6 @@ int main()
 		printf("\nOpcije:\nmd - stvaranje poddirektorija\ncd - ulazak u odredjeni direktorij");
 		printf("\ncd.. - povratak na roditeljski direktorij\ndir - ispis poddirektorija u trenutnom direktoriju\nexit - izlazak iz programa\n\n");
 		scanf(" %s", userInput);
-		system("cls");
 
 		if (!strcmp(userInput, "md"))
 		{
@@ -85,15 +82,7 @@ int main()
 		}
 		else if (!strcmp(userInput, "cd.."))
 		{
-			Position value = CurrentToParent(&parentStack);
-			if(value != NULL) 
-			{
-				current = value;
-			}
-			else 
-			{
-				printf("Opcija se ne moze izvrsiti\n");
-			}
+			current = CurrentToParent(current, &parentStack);
 		}
 		else if (!strcmp(userInput, "dir"))
 		{
@@ -120,7 +109,9 @@ int main()
 			printf("Neispravna opcija!\n");
 		}
 
-		puts("");
+		printf("\nPritisni bilo koju tipku za nastavak...");
+		getch();
+		system("cls");
 	}
 
 	return 0;
@@ -208,7 +199,7 @@ void PrintDirectory(Position current)
 		printf("Direktorij sadrzava:\n\n");
 		while (current != NULL) 
 		{
-			printf("		%s\n", current->name);
+			printf("	%s\n", current->name);
 			current = current->sibling;
 		}
 	}
@@ -217,32 +208,23 @@ void PrintDirectory(Position current)
 void PrintCurrentPath(Position current, StackPosition stackHead)
 {
 	printf("<");
-	if(stackHead->next != NULL) 
-	{
-		StackPosition stackElement = stackHead->next;
-
-		Stack printHelper;
-		printHelper.data = NULL;
-		printHelper.next = NULL;
-
-		while (stackElement != NULL)
-		{
-			stackElement->next = printHelper.next;
-			printHelper.next = stackElement;
-
-			stackElement = stackElement->next;
-		}
-
-		StackPosition printElement = printHelper.next;
-
-		while (printElement != NULL)
-		{
-			printf("%s/", printElement->data->name);
-			printElement = printElement->next;
-		}
-	}
-	
+	PrintReverse(stackHead);
 	printf("%s>", current->name);
+}
+
+void PrintReverse(StackPosition current)
+{
+	if (current == NULL)
+	{
+		return;
+	}
+
+	PrintReverse(current->next);
+
+	if(current->data->name != NULL)
+	{
+		printf("%s/", current->data->name);
+	}
 }
 
 Position MoveCurrent(Position current, StackPosition stackHead)
@@ -267,11 +249,13 @@ Position MoveCurrent(Position current, StackPosition stackHead)
 		{
 			if (!strcmp(searchPosition->name, directoryName)) 
 			{
-
 				printf("Uspjesno prebacivanje na direktorij '%s'\n", searchPosition->name);
+
 				PushStack(rememberParent, stackHead);
+
 				return searchPosition;
 			}
+
 			searchPosition = searchPosition->sibling;
 		}
 
@@ -291,16 +275,20 @@ Position MakePosition(char* newDirectoryName)
 	return newDirectory;
 }
 
-Position CurrentToParent(StackPosition stackHead)
+Position CurrentToParent(Position current, StackPosition stackHead)
 {
-	Position returnValue = PopStack(stackHead);
-	if (returnValue != NULL) 
+	if (stackHead->next == NULL)
 	{
-		return returnValue;
+		printf("Opcija se ne moze izvrsiti");
+		return current;
 	}
 	else 
 	{
-		return NULL;
+		Position returnValue = PopStack(stackHead);
+
+		printf("Uspjesno prebacivanje na direktorij '%s'", returnValue->name);
+		return returnValue;
+
 	}
 }
 
@@ -321,7 +309,11 @@ int PushStack(Position parent, StackPosition stackHead)
 	newStackElement->next = stackHead->next;
 	stackHead->next = newStackElement;
 
-	printf("Dodano na parent stack\n");
+	StackPosition temporary = stackHead->next;
+	while(temporary != NULL) 
+	{
+		temporary = temporary->next;
+	}
 
 	return 1;
 }
