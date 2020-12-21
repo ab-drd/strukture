@@ -106,7 +106,7 @@ int main()
 int ReadFromFile(Position head, char* filename)
 {
 	char* wholeString = (char*)malloc(MAX_CHAR * sizeof(char));
-	char* readString[MAX_CHAR];
+	char readString[MAX_CHAR];
 
 	int e;
 	int stringLength = 0;

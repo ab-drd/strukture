@@ -132,7 +132,7 @@ void Remove(Position current)
 void CreateChild(Position current)
 {
 	int satisfied = 1;
-	char* newDirectoryName[MAX_USER_INPUT];
+	char newDirectoryName[MAX_USER_INPUT];
 
 	printf("Unesite ime novog poddirektorija: ");
 	scanf(" %s", newDirectoryName);
