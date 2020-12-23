@@ -309,12 +309,6 @@ int PushStack(Position parent, StackPosition stackHead)
 	newStackElement->next = stackHead->next;
 	stackHead->next = newStackElement;
 
-	StackPosition temporary = stackHead->next;
-	while(temporary != NULL) 
-	{
-		temporary = temporary->next;
-	}
-
 	return 1;
 }
 

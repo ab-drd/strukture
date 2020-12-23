@@ -1,4 +1,9 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Hello World.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  main10.c
-c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main10.c(116): warning C4013: 'isdigit' undefined; assuming extern returning int
+  main11.c
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main11.c(79): warning C4013: 'getch' undefined; assuming extern returning int
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main11.c(80): warning C4013: 'system' undefined; assuming extern returning int
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main11.c(110): warning C4013: 'malloc' undefined; assuming extern returning int
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main11.c(115): warning C4033: 'InitializeHashTable' must return a value
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main11.c(124): warning C4033: 'InitializeHashTable' must return a value
+c:\users\antonia\documents\strukture podataka zadaci\strukture\hello world\main11.c(133): warning C4715: 'InitializeHashTable': not all control paths return a value
   Hello World.vcxproj -> C:\Users\Antonia\Documents\Strukture Podataka Zadaci\strukture\Debug\Hello-world.exe
