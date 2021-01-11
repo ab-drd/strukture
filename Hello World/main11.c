@@ -115,8 +115,8 @@ Hash InitializeHashTable(int tableSize)
 		return;
 	}
 
-	table->tableSize = NextPrime(tableSize);
-	table->hashList = (Position*)malloc(table->tableSize * sizeof(Position));
+	table->tableSize = tableSize;
+	table->hashList = (Position*)malloc(NextPrime(tableSize) * sizeof(Position));
 
 	if (table->hashList == NULL)
 	{
